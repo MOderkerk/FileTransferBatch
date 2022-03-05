@@ -1,0 +1,21 @@
+logging:
+  level:
+    de:
+      oderkerk:
+        tools:
+          ftp: DEBUG
+
+spring:
+  datasource:
+    url: "jdbc:hsqldb:mem:test;DB_CLOSE_DELAY=-1"
+    driver-class-name: org.hsqldb.jdbc.JDBCDriver
+
+  batch:
+    initialize-schema: always
+  jpa:
+    hibernate:
+      generate-ddl: true
+      auto-ddl: update
+odin:
+  security:
+    netrc: d:\\odin.netrc
