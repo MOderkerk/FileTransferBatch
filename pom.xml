@@ -38,6 +38,9 @@
         <junit.version>5.8.2</junit.version>
         <jacoco.version>0.8.7</jacoco.version>
 
+        <sonar.organization>moderkerk</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+
     </properties>
     <dependencyManagement>
         <dependencies>
