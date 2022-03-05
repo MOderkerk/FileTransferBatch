@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.net.ftp.FTPClient;
+import org.apache.commons.net.ftp.FTPSClient;
 import org.springframework.integration.ftp.session.FtpSession;
 import org.springframework.stereotype.Component;
 
@@ -45,7 +46,7 @@ public class FileTransferManager {
     /**
      * Ftp Client
      */
-    private FTPClient ftpClient;
+    private FTPSClient ftpClient;
     /**
      * target server for connection
      */
@@ -64,7 +65,7 @@ public class FileTransferManager {
      */
     public void connect() throws IOException {
         log.info("Connect to FTP server {} on port {}", this.host, this.port);
-        if (Objects.isNull(this.ftpClient)) ftpClient = new FTPClient();
+        if (Objects.isNull(this.ftpClient)) ftpClient = new FTPSClient();
         ftpClient.connect(host, port);
         ftpClient.login(user, password);
         if (Objects.isNull(ftpSession)) this.ftpSession = new FtpSession(ftpClient);

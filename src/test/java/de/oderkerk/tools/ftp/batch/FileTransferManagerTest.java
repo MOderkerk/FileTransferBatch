@@ -1,6 +1,7 @@
 package de.oderkerk.tools.ftp.batch;
 
 import org.apache.commons.net.ftp.FTPClient;
+import org.apache.commons.net.ftp.FTPSClient;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -19,13 +20,13 @@ import static org.mockito.Mockito.*;
 class FileTransferManagerTest {
 
 
-    FTPClient ftpClient;
+    FTPSClient ftpClient;
     FileTransferManager fileTransferManager ;
     FtpSession ftpSession;
 
     @BeforeEach
     void setUp(){
-        ftpClient = mock(FTPClient.class);
+        ftpClient = mock(FTPSClient.class);
         ftpSession = mock(FtpSession.class);
         fileTransferManager = new FileTransferManager("test",21,"test","test");
         fileTransferManager.setFtpClient(ftpClient);
@@ -61,7 +62,7 @@ class FileTransferManagerTest {
 
     }
     @Test
-    void downloadFileOkWithOpenSession() throws IOException {
+    void downloadFileOkWithOpenSession() {
 
 
         when(ftpSession.isOpen()).thenReturn(true);
