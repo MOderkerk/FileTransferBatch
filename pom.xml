@@ -15,7 +15,7 @@
         <spring.batch.version>4.3.4</spring.batch.version>
         <spring-ftp-integration.version>5.5.9</spring-ftp-integration.version>
         <lombock.version>1.18.22</lombock.version>
-        <hsql.version>2.6.1</hsql.version>
+        <hsql.version>2.7.1</hsql.version>
         <springbootbatchtest.version>4.3.5</springbootbatchtest.version>
         <mokito.version>4.3.1</mokito.version>
         <build.plugins.plugin.version>2.6.3</build.plugins.plugin.version>
